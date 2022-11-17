@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>It's Pizza&#33; - </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="/css/slimmenu.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/responsiveslides.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400&amp;display=swap" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/jquery.slimmenu.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+  </head>
+  <body>
+    <header><img src="/ItsPizzaLogo.png" alt="Logo">
+      <nav>
+        <div class="nav">
+          <ul class="slimmenu" id="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="form.html">Order-Form</a></li>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="login.html">(Login)</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="body-content">
+      <div class="main">
+        <ul class="rslides">
+          <li><img src="/img-slideshow/1.jpg" alt="Slideshow img text - Pizza"></li>
+          <li><img src="/img-slideshow/2.jpg" alt="Slideshow img text - is"></li>
+          <li><img src="/img-slideshow/3.jpg" alt="Slideshow img text - Yummy!"></li>
+        </ul>
+        <h1>Welcome</h1>
+        <p>Welcome to<b> It&apos;s Pizza&#33;</b> pizza store.</p>
+      </div>
+      <script>
+        $(function () {
+            $(".rslides").responsiveSlides({
+                auto: true,             // Boolean: Animate automatically, true or false
+                speed: 500,            // Integer: Speed of the transition, in milliseconds
+                timeout: 2000//4000          // Integer: Time between slide transitions, in milliseconds
+            })
+        });
+      </script>
+      <script>
+        $('#navigation').slimmenu(
+            {
+                resizeWidth: '800',
+                collapserTitle: 'Main Menu',
+                animSpeed: 'medium',
+                easingEffect: null,
+                indentChildren: false,
+                childrenIndenter: '&nbsp;'
+            });
+        
+      </script>
+      <footer>
+        <p>Copyright &copy; 2021 It's Pizza&#33;</p>
+      </footer>
+    </div>
+  </body>
+</html>

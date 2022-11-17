@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+    div.form
+        form(action='/login.response' name='loginForm' method='post')
+            br
+            |         Username:
+            input#username(type='TEXT' name='username' size='30')
+            br
+            |         Password:
+            input#password(type='PASSWORD' name='password' size='40')
+            br
+            br
+            input(type='SUBMIT' name='loginButton' value='Login')

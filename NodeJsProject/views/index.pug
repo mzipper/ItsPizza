@@ -1,0 +1,24 @@
+extends layout.pug
+
+block content
+    div.main
+        ul.rslides
+            li
+                img(src='/img-slideshow/1.jpg' alt='Slideshow img text - Pizza')
+            li
+                img(src='/img-slideshow/2.jpg' alt='Slideshow img text - is')
+            li
+                img(src='/img-slideshow/3.jpg' alt='Slideshow img text - Yummy!')
+        h1 Welcome
+        p
+            | Welcome to
+            b  It&apos;s Pizza&#33;
+            |  pizza store.
+    script.
+        $(function () {
+            $(".rslides").responsiveSlides({
+                auto: true,             // Boolean: Animate automatically, true or false
+                speed: 500,            // Integer: Speed of the transition, in milliseconds
+                timeout: 2000//4000          // Integer: Time between slide transitions, in milliseconds
+            })
+        });

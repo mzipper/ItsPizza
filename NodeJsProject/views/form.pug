@@ -1,0 +1,47 @@
+extends layout.pug
+
+block content
+    div.form
+        h2 Order Form
+        form(action='/form-response.html' name='orderForm' method='post')
+            br
+            |         Choose Pizza Type:
+            br
+            each item in pizzas
+                input(type="RADIO" id="pizzaType" name="pizzaType" value=item.Name)
+                - const formatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+                - var pizzaPrice = formatter.format(item.Price);
+                label(for=item.Name)= `${item.Name} ${pizzaPrice}`
+                br
+            br
+            br
+            |         Pies
+            select#piesQty(name='pieQty')
+                option(value='0' selected='') 0
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+                option(value='4') 4
+            |         Slices
+            select#slicesQty(name='sliceQty')
+                option(value='0' selected='') 0
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+                option(value='4') 4
+                option(value='5') 5
+                option(value='6') 6
+                option(value='7') 7
+            br
+            br
+            |         Choose Topping:
+            br
+            each item in list
+                input(type="RADIO" id="toppingtype" name="toppingType" value=item.Name)
+                - const formatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+                - var toppingPrice = formatter.format(item.Price);
+                label(for=item.Name)= `${item.Name} ${toppingPrice}`
+                br
+            br
+            br
+            input(type='SUBMIT' name='submitButton' value='Submit Order')

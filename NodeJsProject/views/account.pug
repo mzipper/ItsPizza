@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+    h2= `Account info for: ${user}`
+    table
+        caption
+            | Your Order History
+        thead
+            tr
+                th Pizza Type
+                th Pizza Price
+                th Topping
+                th Topping Price
+                th Quantity
+                th Total Price
+        tbody
+            - const formatter = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
+            each row in list
+                tr
+                    - var pizzaPrice = formatter.format(row.PizzaPrice);
+                    - var toppingPrice = formatter.format(row.ToppingPrice);
+                    - var totalPrice = formatter.format(row.TotalPrice);
+                    td= row.PizzaName
+                    td= pizzaPrice
+                    td= row.ToppingName
+                    td= toppingPrice
+                    td= row.Quantity
+                    td= totalPrice
